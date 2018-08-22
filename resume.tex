@@ -1,0 +1,210 @@
+\documentclass[11pt,letterpaper,english]{article}
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{fontawesome}
+\pagestyle{empty}
+
+% Font Change
+\usepackage{lmodern}
+\usepackage[lf]{ebgaramond}
+\usepackage[cmintegrals,cmbraces]{newtxmath}
+\usepackage{ebgaramond-maths}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{setspace}
+\usepackage[unicode=true,pdfusetitle,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 1},backref=section,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ linkcolor=blue,citecolor=blue,filecolor=blue,urlcolor=gray}
+\usepackage{enumitem}
+\setlist[itemize]{nosep}
+\setlength{\parskip}{0pt}
+
+\makeatletter
+
+% % Page layout (geometry)
+\usepackage[hmargin=0.9in,top=0.7in,bottom=0.6in,nohead]{geometry} %
+\setlength{\parindent}{0in}
+\setlength{\topskip}{0in}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% PDF specific LaTeX commands.
+\pdfpageheight\paperheight
+\pdfpagewidth\paperwidth
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% Textclass specific LaTeX commands.
+\newenvironment{resumelist}[1]
+{\begin{list}{}
+{\setlength\itemsep{0pt}
+\setlength\topsep{0pt}
+\setlength\parskip{0pt}
+\setlength\parsep{0pt}
+\settowidth{\labelwidth}{#1}
+ \setlength{\leftmargin}{\labelwidth}
+ \addtolength{\leftmargin}{\labelsep}
+ \renewcommand{\makelabel}[1]{##1\hfil}}}
+{\end{list}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% User specified LaTeX commands.
+
+\usepackage{amsfonts}\@ifundefined{definecolor}
+ {\usepackage{color}}{}
+\usepackage{array}\usepackage{hhline}
+
+% No hyphenation command
+%\hyphenchar\font=-1
+\usepackage[none]{hyphenat}
+
+% Adjust itemization indent where needed
+\usepackage{enumitem}
+
+% Footnote rule
+\setlength{\skip\footins}{0.0469in}
+\renewcommand{\footnoterule}{\vspace*{-0.0071in}\setlength\leftskip{0pt}\setlength\rightskip{0pt plus 1fil}\noindent\textcolor{black}{\rule{0.25\columnwidth}{0.0071in}}\vspace*{0.0398in}}
+
+% ChangeMargin Section Def
+\def\changemargin#1#2{\list{}{\rightmargin#2\leftmargin#1}\item[]}
+\let\endchangemargin=\endlist 
+
+
+\def\@texttop{\vskip 0pt}
+
+\label{Meta Data} 
+\title{Resume}
+\author{Jonathan D. Bean}
+\date{}
+
+\makeatother
+
+\begin{document}
+
+\label{Header}
+\vspace*{-40pt}
+\begin{singlespace}
+\begin{center}
+\textsc{\textbf{\LARGE Jonathan D.\ Bean}}
+\vspace{3pt}
+\hrule height 1pt
+\vspace{4pt}
+\small
+\href{mailto:jdbean@jdbean.net}{\color{black}\faEnvelope~jdbean@jdbean.net}~~|~~\href{https://jdbean.net}{\color{black}\faGlobe~https://jdbean.net}~~|~~\href{https://github.com/jdbean}{\color{black}\faGithub~jdbean}\\
+\small
+\end{center}
+\end{singlespace}
+
+\label{Description}
+\vspace{-12pt}
+\begin{changemargin}{0.3cm}{0.3cm}
+Full stack web developer with a passion for engineering and refining technical systems. With experience in Ruby on Rails, JavaScript, and React as well as a background in Law and Open Source Software. I possess strong skills in project management and creative problem-solving as well as a broad understanding of the modern software landscape that help companies design and implement innovative software solutions to satisfy customer needs.
+\end{changemargin}
+
+\label{Technical Projects}
+\underline{\textbf{\textsc{\large TECHNICAL PROJECTS}}}{\large \par}
+\smallskip
+
+\textbf{\textsc{Ex-Static}} 
+--\begin{small}
+\href{https://github.com/jdbean/Ex-Static}{Source Code}~\color{darkgray}{|}~\href{https://office.johannabearman.duckdns.org}{Demo}
+\end{small}
+\begin{scriptsize}
+\color{gray}
+\faUser~user~~\faKey~exstatic-password
+\end{scriptsize}\\
+\textit{Turn any Jekyll blog into a Content Management System with a user-friendly interface for authors and editors}
+\begin{itemize}
+\item Combined Semantic-UI and Custom SASS/CSS to design frontend
+\item Packaged project as a Ruby Gem to ease reuse of code in multiple sites
+\item Configured Sinatra to provide a JSON API backend
+\item Utilized React to create a performant single-page-application frontend
+\end{itemize}
+\smallskip
+
+\textbf{\textsc{Lend-to-Friend}} 
+--\begin{small}
+\href{https://github.com/jdbean/lend-to-friend}{Source Code}~\color{darkgray}{|}~\href{https://pacific-earth-11787.herokuapp.com/}{Demo}
+\end{small}
+\begin{scriptsize}
+\color{gray}
+\faUser~lf@lf.com~~\faKey~password
+\end{scriptsize}\\
+\textit{A peer-to-peer lending community where users can post, lend, and borrow items}
+\begin{itemize}
+\item Combined Bootstrap and Custom CSS to produce a responsively designed frontend
+\item Configured Devise to ensure authentication/authorization of users throughout the site
+\item Employed ChartKick and HighChart.js to provide site analytics
+\end{itemize}
+\smallskip
+
+\textbf{\textsc{Protocol}} 
+--\begin{small}
+\href{https://github.com/jdbean/protocol-frontend}{Source Code (Front-End)}~\color{darkgray}{|}~\href{https://github.com/jdbean/protocol-backend}{Source Code (Back-End)}~|~\href{https://www.youtube.com/watch?v=vMI0HT0UjEM}{Demo}\\
+\end{small}
+\textit{A real-time chat application that allows for seamless real-time multi-party multi-lingual conversations}
+\begin{itemize}
+\item Configured ActionCable to provide real-time web-socket based text communications
+\item Integrated with Google APIs to provide at will translation of text
+\item Employed ActiveRecord to ensure persistence of channel messages between sessions
+\end{itemize}
+\bigskip
+
+\label{Skills}
+\underline{\textbf{\textsc{\large TECHNICAL SKILLS}}}{\large \par}
+\smallskip
+Ruby, Rails, Sinatra, JavaScript, React, Redux, HTML, CSS, Semantic UI, AWS, Heroku, \LaTeX, Linux, Docker
+\bigskip
+
+\label{Experience}
+\underline{\textbf{\textsc{\large EXPERIENCE}}}{\large \par}
+\smallskip
+
+\textbf{\textsc{Law Office of Jonathan D.\ Bean}}, New York, NY\\\nopagebreak
+\textbf{\textit{Principal Counsel}}, April 2016--Present%\\\nopagebreak
+\begin{resumelist}{M}
+\item    
+Counsel technology-oriented clients on matters including licensing, trademark, copyright, patent, privacy and data-security law. Conducted review of open source license compliance obligations, policies, and practices for client WordPress.com and developed open source compliance documentation for reference by company employees.
+\end{resumelist}
+\smallskip
+
+\textbf{\textsc{Software Freedom Law Center}}, New York, NY\\\nopagebreak
+\textbf{\textit{Counsel}}, October 2013--July 2016\ |\ \textbf{\textit{Legal Fellow}}, October 2012--October 2013\ |\ \textbf{\textit{Law Clerk}}, May 2011--August 2011
+\begin{resumelist}{M}
+\item Advised developers, users, and distributors of open source software. Audited software products for compliance with open source software license conditions and export control regulations. Authored briefs \textit{amicus curiae} submitted before the United States Supreme Court. Represented firm at industry conferences and working groups. Hired and supervised interns, junior attorneys, and staff.
+%Provided legal advice and consulting services to leading information technology companies and government agencies. Provided advice on issues concerning telecommunications law, blockchains, privacy, and intellectual property licensing. Consulting project sectors included cloud, mobile, internet of things, big data, information security, and data center hardware.
+\end{resumelist}
+\bigskip
+
+\label{Education}
+\underline{\textbf{\textsc{\large EDUCATION}}}{\large \par}
+\smallskip
+
+\textbf{\textsc{Flatiron School}}, New York, NY -- Software Engineering Immersive, June 2018
+\begin{resumelist}{MMMMMMMM}
+\item [{Description:}] Intensive full stack web development training emphasizing Ruby on Rails, JavaScript, and React.
+\end{resumelist}
+\smallskip
+
+\textbf{\textsc{New York University Law School}}, New York, NY -- J.D., May 2012
+\begin{resumelist}{MMMMMMMM}
+\item [{Bar Admission:}] New York State, 2012
+\item [{Honors:}] New York University Journal of Law \& Liberty\\
+\textit{Senior Articles Editor}, 2011--2012\ |\ \textit{Staff Editor}, 2010--2011
+\end{resumelist}
+\smallskip
+
+\textbf{\textsc{The George Washington University}}, Washington D.C. -- B.A. in Political Science, May 2008
+\begin{resumelist}{MMMMMMMM}
+\item [{Honors:}] Degree awarded \textit{magna cum laude}
+\end{resumelist}
+
+
+
+\end{document}
+
